@@ -24,6 +24,7 @@ public class view_UserDailyCheckIn extends javax.swing.JInternalFrame {
 
         jPanel1 = new javax.swing.JPanel();
         btnCheckIn = new javax.swing.JLabel();
+        txtMonth = new javax.swing.JLabel();
 
         setClosable(true);
         setTitle("Daily Check in");
@@ -33,6 +34,7 @@ public class view_UserDailyCheckIn extends javax.swing.JInternalFrame {
         btnCheckIn.setForeground(new java.awt.Color(0, 0, 0));
         btnCheckIn.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         btnCheckIn.setText("22");
+        btnCheckIn.setToolTipText("");
         btnCheckIn.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         btnCheckIn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnCheckIn.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -41,21 +43,30 @@ public class view_UserDailyCheckIn extends javax.swing.JInternalFrame {
             }
         });
 
+        txtMonth.setFont(new java.awt.Font("Segoe UI", 0, 22)); // NOI18N
+        txtMonth.setForeground(new java.awt.Color(0, 0, 0));
+        txtMonth.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        txtMonth.setText("June");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(142, 142, 142)
-                .addComponent(btnCheckIn, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(168, Short.MAX_VALUE))
+                .addGap(152, 152, 152)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(btnCheckIn, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
+                    .addComponent(txtMonth, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(158, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(30, 30, 30)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(txtMonth)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnCheckIn, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(40, Short.MAX_VALUE))
+                .addGap(30, 30, 30))
         );
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 410, 170));
@@ -75,9 +86,8 @@ public class view_UserDailyCheckIn extends javax.swing.JInternalFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel btnCheckIn;
-    private javax.swing.JButton btnEditData;
-    private javax.swing.JButton btnEditData1;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel txtMonth;
     // End of variables declaration//GEN-END:variables
 
     private User activeUser;
@@ -92,6 +102,7 @@ public class view_UserDailyCheckIn extends javax.swing.JInternalFrame {
     public void SetDate()
     {
         btnCheckIn.setText(String.valueOf(localDate.getDayOfMonth()));
+        txtMonth.setText(String.valueOf(localDate.getMonth()));
     }
     
     public void CheckIn()

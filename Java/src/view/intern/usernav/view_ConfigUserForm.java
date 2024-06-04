@@ -112,7 +112,7 @@ public class view_ConfigUserForm extends javax.swing.JInternalFrame {
 
         btnSaveData.setBackground(new java.awt.Color(218, 218, 218));
         btnSaveData.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
-        btnSaveData.setForeground(new java.awt.Color(51, 51, 51));
+        btnSaveData.setForeground(new java.awt.Color(0, 0, 0));
         btnSaveData.setText("Save");
         btnSaveData.setToolTipText("");
         btnSaveData.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -126,7 +126,7 @@ public class view_ConfigUserForm extends javax.swing.JInternalFrame {
 
         btnEditData.setBackground(new java.awt.Color(218, 218, 218));
         btnEditData.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
-        btnEditData.setForeground(new java.awt.Color(51, 51, 51));
+        btnEditData.setForeground(new java.awt.Color(0, 0, 0));
         btnEditData.setText("Edit");
         btnEditData.setToolTipText("");
         btnEditData.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -330,11 +330,14 @@ public class view_ConfigUserForm extends javax.swing.JInternalFrame {
             return;
         }
         
-        try {
-                Long.parseLong(fldPhone.getText());
-        } catch (Exception e) {
-                JOptionPane.showMessageDialog(null, e);
-                return;
+        if (fldPhone.getText().length() > 0)
+        {
+             try {
+                    Long.parseLong(fldPhone.getText());
+            } catch (Exception e) {
+                    JOptionPane.showMessageDialog(null, e);
+                    return;
+            }   
         }
         
         activeUser.setName(fldName.getText());
